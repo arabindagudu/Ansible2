@@ -10,3 +10,7 @@
     apt:
      name: git
      state: present
+  - name: iwant to install java
+    apt:
+     name: openjdk-11-jdk
+     state: present
