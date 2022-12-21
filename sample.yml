@@ -4,29 +4,25 @@
   gather_facts: yes
   tasks: 
    - name: i want to install webserver on ubuntu nodes
-     yum:
+     apt:
       name: apache2
       state: present
-     when: ansible_os_family =="Debian"  
-   - name: i want to start webserver on ubuntu nodes
-     yum: 
-      name: apache2
-      state: started
      when: ansible_os_family =="Debian"
 
-   - name: i want install webservers on Redhat nodes
-     yum:
-      name: httpd
-      state: present
-     when: ansible_os_family =="Debian"
+   - name: i want to start webserver on ubuntu nodes
+     service: 
+      name: apache2
+      state: started
+     when: ansible_os_family =="Debian""
 
    - name: i want to install webservers on RedHat nodes
      yum:
       name: httpd
       state: present
      when:  ansible_os_family =="RedHat"
+
    - name: i want to start webservers on RedHat nodes
-     yum:
+     service:
       name: httpd
       state: started
      when:  ansible_os_family =="RedHat"
