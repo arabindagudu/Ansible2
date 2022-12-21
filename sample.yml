@@ -12,4 +12,14 @@
      service: 
        name: apache2
        sate: started
-     when: ansible_os_family =="Debain"      
+     when: ansible_os_family =="Debain" 
+   - name : i  want to install webserver on Redhat nodes
+     apt:
+      name: httpd
+      state: present
+     when: ansible_os_family =="Redhat" 
+   - name: 
+     service: 
+       name: httpd
+       sate: started
+     when: ansible_os_family =="Redhat"       
