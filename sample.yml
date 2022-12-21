@@ -26,13 +26,18 @@
     apt:
      name: openjdk-11-jdk
      state: present
+  - name: iwant to install java
+    yum:
+     name: openjdk-11-jdk
+     state: present
+    when: ansible_os_family =="Redhat"    
   - name: i want install git
     apt:
      name: git
      state: present
     when: ansible_os_family =="Debian" 
   - name: i want install git
-    apt:
+    yum:
      name: git
      state: present
     when: ansible_os_family =="Debian"   
