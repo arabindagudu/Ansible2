@@ -5,11 +5,11 @@
   tasks:
    - name : i  want to install webserver on ubuntu nodes
      apt:
-      name: nginx
+      name: apache2
       state: present
      when: ansible_os_family =="Debain"   
    - name: 
      service: 
-       name: nginx
+       name: apache2
        sate: started
      when: ansible_os_family =="Debain"      
