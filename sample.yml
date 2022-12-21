@@ -1,43 +1,14 @@
 ---
 - hosts: all
   become: yes
+  gather_facts: yes
   tasks:
-  - name: i want to install apache2
-    apt:
-     name: apache2
-     state: present
-    when: ansible_os_family =="Debian" 
-  - name: i want to install apache2 
-    yum:
-     name: apache2 
-     state: present
-    when: ansible_os_family =="RedHat" 
-  - name: i want install git
-    apt:
-     name: git
-     state: present
-    when: ansible_os_family =="Debian" 
-  - name: i want install git
-    apt:
-     name: git
-     state: present
-    when: ansible_os_family =="Redhat" 
-  - name: iwant to install java
-    apt:
-     name: openjdk-11-jdk
-     state: present
-  - name: iwant to install java
-    yum:
-     name: openjdk-11-jdk
-     state: present
-    when: ansible_os_family =="Redhat"    
-  - name: i want install git
-    apt:
-     name: git
-     state: present
-    when: ansible_os_family =="Debian" 
-  - name: i want install git
-    yum:
-     name: git
-     state: present
-    when: ansible_os_family =="Debian"   
+   - name : i  want to install webserver on ubuntu nodes
+     apt:
+      name: apache2
+      state: present
+   - name: 
+     service: 
+       name: apache2
+       sate: started
+     when: ansible_os_family =="Debain"      
