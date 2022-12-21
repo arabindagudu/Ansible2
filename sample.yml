@@ -6,11 +6,33 @@
     apt:
      name: nginx
      state: present
+    when: ansible_os_family =="Debian" 
+  - name: i want to install nginx 
+    yum:
+     name: nginx 
+     state: present
+    when: ansible_os_family =="RedHat" 
   - name: i want install git
     apt:
      name: git
      state: present
+    when: ansible_os_family =="Debian" 
+  - name: i want install git
+    apt:
+     name: git
+     state: present
+    when: ansible_os_family =="Redhat" 
   - name: iwant to install java
     apt:
      name: openjdk-11-jdk
      state: present
+  - name: i want install git
+    apt:
+     name: git
+     state: present
+    when: ansible_os_family =="Debian" 
+  - name: i want install git
+    apt:
+     name: git
+     state: present
+    when: ansible_os_family =="Debian"   
